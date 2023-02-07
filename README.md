@@ -21,3 +21,7 @@ Optional Arguments:
 -t , --threads               INT     Default (1)
 -h , --help                          Print Help
 ```
+In order to run this container, one needs to mount a data volume that contains the input fastq sequences, and a reference data volume contains GTDB-tk references.
+```
+ docker run --volume ./:/data --volume ${GTDBTK_DATA_PATH}:/refdata docker.io/lblzhongwang/meta:1.0 -1 /data/R1.fastq.gz -2 /data/R2.fastq.gz -o /data/results -t 96
+ ```
